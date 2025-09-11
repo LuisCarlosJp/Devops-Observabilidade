@@ -52,7 +52,7 @@ services:
       - 4317:4317
       - 4318:4318
       - 8888:8888
-    command: [ "--config=/etc/otecol/config.yaml"]
+    command: [ "--config=/etc/otelcol/config.yaml"]
     volumes:
       - ./config/otel/otel.yaml:/etc/otelcol/config.yaml
     depends_on:
