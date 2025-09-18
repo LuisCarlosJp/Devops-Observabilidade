@@ -16,7 +16,7 @@ import {
 } from '@opentelemetry/semantic-conventions';
 import { SimpleLogRecordProcessor } from '@opentelemetry/sdk-logs';
 import { OTLPLogExporter } from '@opentelemetry/exporter-logs-otlp-proto';
-// import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
+import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
 
 const traceExporter = new OTLPTraceExporter();
 
@@ -26,7 +26,7 @@ const resource = resourceFromAttributes({
 });
 
 const mergedResource = resource;
-// diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
+diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 
 const sdk = new NodeSDK({
   spanProcessor: new BatchSpanProcessor(traceExporter),
